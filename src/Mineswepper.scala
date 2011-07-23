@@ -70,13 +70,13 @@ class Game(rowsc: Int, columnsc: Int, bombsc: Int, boardc: List[List[Cell]] = Ni
     }
 
     val neighborCells = getCellOnBoard(boardWithBombs, x - 1, y - 1) ::
-    					getCellOnBoard(boardWithBombs, x, y - 1) ::
-    					getCellOnBoard(boardWithBombs, x + 1, y - 1) ::
-    					getCellOnBoard(boardWithBombs, x - 1, y) ::
-    					getCellOnBoard(boardWithBombs, x + 1, y) ::
-						getCellOnBoard(boardWithBombs, x - 1, y + 1) ::
-						getCellOnBoard(boardWithBombs, x, y + 1) ::
-						getCellOnBoard(boardWithBombs, x + 1, y + 1) :: Nil
+                        getCellOnBoard(boardWithBombs, x, y - 1) ::
+                        getCellOnBoard(boardWithBombs, x + 1, y - 1) ::
+                        getCellOnBoard(boardWithBombs, x - 1, y) ::
+                        getCellOnBoard(boardWithBombs, x + 1, y) ::
+                        getCellOnBoard(boardWithBombs, x - 1, y + 1) ::
+                        getCellOnBoard(boardWithBombs, x, y + 1) ::
+                        getCellOnBoard(boardWithBombs, x + 1, y + 1) :: Nil
     val hintValue = (neighborCells.map(countBomb)).foldLeft(0)(_ + _)
     hintValue match {
       case 0 => Empty(false)
@@ -116,13 +116,13 @@ class Game(rowsc: Int, columnsc: Int, bombsc: Int, boardc: List[List[Cell]] = Ni
     val newboard = board.updated(x, board(x).updated(y, Empty(true)))
     val newGame = new Game(rows, columns, bombs, newboard)
     val neighborPositions: List[(Int, Int)] = getPosition(board, x - 1, y - 1) ++
-  											  getPosition(board, x, y - 1) ++
-  											  getPosition(board, x + 1, y - 1) ++
-  											  getPosition(board, x - 1, y) ++
-  											  getPosition(board, x + 1, y) ++
-  											  getPosition(board, x - 1, y + 1) ++
-  											  getPosition(board, x, y + 1) ++
-  											  getPosition(board, x + 1, y + 1) ++ Nil
+                                              getPosition(board, x, y - 1) ++
+                                              getPosition(board, x + 1, y - 1) ++
+                                              getPosition(board, x - 1, y) ++
+                                              getPosition(board, x + 1, y) ++
+                                              getPosition(board, x - 1, y + 1) ++
+                                              getPosition(board, x, y + 1) ++
+                                              getPosition(board, x + 1, y + 1) ++ Nil
     neighborPositions.foldLeft(newGame)((game, tuple) => game.showCell(tuple))
   }
 
