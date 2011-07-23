@@ -1,0 +1,3 @@
+A purely functional Mineswepper game written in Scala.
+Just run MineswepperWindow.scala!
+No external dependencies. Only Scala + Swing.
