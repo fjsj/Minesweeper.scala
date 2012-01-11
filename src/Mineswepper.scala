@@ -33,8 +33,7 @@ class Game(rowsc: Int, columnsc: Int, bombsc: Int, boardc: List[List[Cell]] = Ni
   }
 
   private def putBomb(x: Int, y: Int, board: List[List[Cell]]): List[List[Cell]] = {
-    val retorno = board.updated(x, board(x).updated(y, Bomb(false)))
-    retorno
+    board.updated(x, board(x).updated(y, Bomb(false)))
   }
 
   private def tryToPutBomb(board: List[List[Cell]]): List[List[Cell]] = {
