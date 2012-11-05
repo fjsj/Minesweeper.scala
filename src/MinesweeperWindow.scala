@@ -198,7 +198,7 @@ class MinesweeperWindow extends JFrame {
   setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE)
 }
 
-object ScalaMain {
+object GameMain {
   def main(args: Array[String]): Unit = {
     val window = new MinesweeperWindow()
     window.setVisible(true)
